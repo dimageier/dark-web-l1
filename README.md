@@ -13,7 +13,9 @@ cd dark-web-l1
 python3 -m http.server 8765
 ```
 
-Open http://localhost:8765/ — or open `index.html` directly. Single file, no deps.
+Open http://localhost:8765/ — single-file `index.html` (full game, no build).
+
+> Online hosting packs the same game via a tiny loader + gzip chunks (`c0.txt`…`c24.txt`) so the browser reconstructs the full HTML. Local `index.html` is the uncompressed complete game.
 
 ## Controls
 
