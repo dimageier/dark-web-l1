@@ -1,0 +1,11 @@
+<script id="dw-lb-js">
+(function(){
+if(window.__DW_LB__)return;window.__DW_LB__=true;
+var KEY="dw_player_name";
+function root(){var p=location.pathname||"";return (p==="/darkweb"||p.indexOf("/darkweb/")===0)?"/darkweb":""}
+function clean(r){var n=String(r||"").trim().replace(/\s+/g," ");return (n.length>=2&&n.length<=16&&/^[A-Za-z0-9 _-]+$/.test(n))?n:null}
+function get(){try{return localStorage.getItem(KEY)||""}catch(e){return""}}
+function set(n){try{localStorage.setItem(KEY,n)}catch(e){}var a=document.getElementById("introName"),b=document.getElementById("menuNameInput");if(a)a.value=n;if(b)b.value=n}
+function esc(t){return String(t).replace(/[&<>"']/g,function(c){return({"&":"&","<":"<",">":">",'"':""","'":"&#39;"})[c]})}
+function paint(el,scores){if(!el)return;var L=(scores||[]).slice(0,10);if(!L.length){el.innerHTML='<h3>Leaderboard</h3><p class="lb-empty">No scores yet — be the first.</p>';return}var h='<h3>Leaderboard</h3><ol>';for(var i=0;i<L.length;i++){var s=L[i];h+='<li><span class="rank">'+(i+1)+'</span><span class="lname">'+esc(s.name||"?")+'</span><span class="lscore">'+Number(s.score||0)+'</span></li>'}el.innerHTML=h+"</ol>"}
+function refresh(){return fetch(root()+"/api/leaderboard",{headers:{Accept:"application/json"}}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){var s=(d&&d.scores)||[];["introLeaderboard","menuLeaderboard","winLeaderboard"].forEach(function(id){paint(document.getElementById(id),s)});return s}).catch(fun
