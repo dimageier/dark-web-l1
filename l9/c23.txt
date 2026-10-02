@@ -1,0 +1,25 @@
+,W/2,H/2,H*0.9);
+    hv.addColorStop(0,"rgba(180,20,10,0)"); hv.addColorStop(1,"rgba(180,20,10,"+(0.55+0.25*Math.sin(elapsed*2))+')');
+    ctx.fillStyle=hv; ctx.fillRect(0,0,W,H);
+  }
+  ctx.restore();
+
+  /* VHS tracking lines */
+  if(!REDUCED && scrambleT>0){
+    ctx.fillStyle="rgba(255,255,255,0.04)";
+    for(var i=0;i<8;i++){
+      var yy=((elapsed*120+i*40)%H);
+      ctx.fillRect(0,yy,W,2);
+    }
+  }
+}
+
+/* boot */
+loadLevel(0);
+showOverlay("intro");
+updateHUD();
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
