@@ -1,0 +1,8 @@
+(lo&&!ll){var x=document.getElementById("loseScoreLine");if(x)x.innerHTML="Score this run: <b>"+sc()+"</b>";post(sc(),lv())}
+  lw=!!wo;ll=!!lo;
+ },400);
+}
+function go(){setTimeout(function(){mount();hook();scores()},0)}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go();
+})();
+</script>
