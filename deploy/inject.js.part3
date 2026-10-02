@@ -1,0 +1,22 @@
+centElement("afterend",wl);else win.appendChild(wl)}
+ var lose=document.querySelector("#ovLose .card");
+ if(lose&&!document.getElementById("loseScoreLine")){var p=lose.querySelector("p"),ls=document.createElement("p");ls.className="tiny";ls.id="loseScoreLine";if(p&&p.nextSibling)lose.insertBefore(ls,p.nextSibling);else lose.appendChild(ls)}
+ var saved=get();if(saved)set(saved);refresh();
+}
+function hook(){
+ function wrap(el,fn){if(!el||el.__dw)return;el.__dw=1;el.addEventListener("click",function(e){if(!fn()){e.preventDefault();e.stopImmediatePropagation()}},true)}
+ var i=document.getElementById("introName"),m=document.getElementById("menuNameInput");
+ wrap(document.getElementById("btnSkipPlay"),function(){return!!need(i)});
+ wrap(document.getElementById("btnPlay"),function(){return!!need(m||i)});
+ var f=document.getElementById("signupForm");
+ if(f&&!f.__dw){f.__dw=1;f.addEventListener("submit",function(e){if(!need(i)){e.preventDefault();e.stopImmediatePropagation()}},true)}
+}
+function scores(){
+ var se=document.getElementById("score");
+ function sc(){return se?parseInt(se.textContent,10)||0:0}
+ function lv(){try{if(typeof LEVEL!=="undefined"&&LEVEL&&LEVEL.num)return LEVEL.num;if(typeof cur!=="undefined")return(cur|0)+1}catch(e){}return 1}
+ var w=document.getElementById("ovWin"),l=document.getElementById("ovLose"),lw=0,ll=0;
+ setInterval(function(){
+  var wo=w&&!w.classList.contains("hidden"),lo=l&&!l.classList.contains("hidden");
+  if(wo&&!lw){post(sc(),lv());refresh()}
+  if
