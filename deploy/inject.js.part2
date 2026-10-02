@@ -1,0 +1,7 @@
+s)</span></label><input type="text" id="introName" maxlength="16" placeholder="Your handle" autocomplete="nickname"/><p class="name-status" id="nameStatus">2–16 letters, numbers, spaces, _ or -</p>';if(signup)intro.insertBefore(nf,signup);else intro.appendChild(nf)}
+ if(intro&&!document.getElementById("introLeaderboard")){var lb=document.createElement("div");lb.className="leaderboard";lb.id="introLeaderboard";lb.innerHTML='<h3>Leaderboard</h3><p class="lb-empty">Loading…</p>';intro.appendChild(lb)}
+ var menu=document.querySelector("#ovMenu .card"),bp=document.getElementById("btnPlay");
+ if(menu&&bp&&!document.getElementById("menuNameInput")){var mf=document.createElement("div");mf.className="namefield";mf.style.marginTop="10px";mf.innerHTML='<label for="menuNameInput">Playing as</label><input type="text" id="menuNameInput" maxlength="16" placeholder="Your handle" autocomplete="nickname"/>';menu.insertBefore(mf,bp)}
+ if(menu&&bp&&!document.getElementById("menuLeaderboard")){var ml=document.createElement("div");ml.className="leaderboard";ml.id="menuLeaderboard";ml.innerHTML='<h3>Leaderboard</h3><p class="lb-empty">Loading…</p>';bp.insertAdjacentElement("afterend",ml)}
+ var win=document.querySelector("#ovWin .card"),bl=document.getElementById("bestLine");
+ if(win&&!document.getElementById("winLeaderboard")){var wl=document.createElement("div");wl.className="leaderboard";wl.id="winLeaderboard";wl.innerHTML='<h3>Leaderboard</h3><p class="lb-empty">Loading…</p>';if(bl)bl.insertAdja
