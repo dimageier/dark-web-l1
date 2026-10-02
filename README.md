@@ -2,7 +2,8 @@
 
 Henry's House–style short-room platformer. Survive Infowars HQ as a hooded figure: slide under lie-tickers, climb falling platforms, stomp callers, dodge fake supplements, pick a loud or quiet path, then crack the Megaphone boss.
 
-**Play:** https://raw.githack.com/dimageier/dark-web-l1/main/index.html
+**Play (CDN):** https://cdn.jsdelivr.net/gh/dimageier/dark-web-l1@main/index.html  
+**Play (githack):** https://raw.githack.com/dimageier/dark-web-l1/main/index.html
 
 Parody only — no real likenesses, logos, or quotes. Cartoon lies like "THE FROGS ARE EMAILING."
 
