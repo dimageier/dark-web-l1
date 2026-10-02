@@ -4,8 +4,16 @@
 <style>html,body{margin:0;height:100%;background:#0B0B12;color:#F2E6C9;font:14px monospace;display:grid;place-items:center}</style>
 </head><body><p>LOADING NOISE…</p>
 <script>
-const N=5;
-Promise.all(Array.from({length:N},(_,i)=>fetch("p"+i+".txt").then(r=>r.text())))
-.then(parts=>{document.open();document.write(parts.join(""));document.close();})
-.catch(e=>{document.body.textContent="Load failed: "+e;});
+(async()=>{
+try{
+const N=25;
+const parts=await Promise.all(Array.from({length:N},(_,i)=>fetch("c"+i+".txt").then(r=>r.text())));
+const b64=parts.join("");
+const bin=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
+const ds=new DecompressionStream("gzip");
+const ab=await new Response(new Blob([bin]).stream().pipeThrough(ds)).arrayBuffer();
+const text=new TextDecoder().decode(ab);
+document.open();document.write(text);document.close();
+}catch(e){document.body.innerHTML="<pre>Load failed: "+e+"</pre>";}
+})();
 </script></body></html>
