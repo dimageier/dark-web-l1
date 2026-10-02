@@ -1,0 +1,16 @@
+<style id="dw-lb-css">
+.namefield{margin-top:10px}.namefield label{display:block;font-weight:800;font-size:14px;margin-bottom:6px}
+.namefield label .opt{color:var(--muted);font-weight:700;font-size:12.5px}
+.namefield input,.signup input[type=text]{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--panel);border:none;border-radius:14px;padding:10px 14px;outline:none;box-shadow:var(--shadow-inset)}
+.namefield input:focus{box-shadow:var(--shadow-inset),0 0 0 3px rgba(217,43,31,.18)}
+.name-status{min-height:17px;margin:6px 0 0!important;font-size:12.5px!important}
+.name-status.err{color:var(--bad)!important;font-weight:700}
+.leaderboard{margin-top:12px;padding:12px 14px;border-radius:16px;background:var(--panel);box-shadow:var(--shadow-inset);text-align:left}
+.leaderboard h3{margin:0 0 8px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.leaderboard ol{margin:0;padding:0;list-style:none}
+.leaderboard li{display:flex;justify-content:space-between;gap:10px;padding:6px 8px;margin:3px 0;border-radius:10px;font-size:13px;box-shadow:var(--shadow-sm)}
+.leaderboard .rank{color:var(--muted);font-variant-numeric:tabular-nums;min-width:1.4em;font-family:"IBM Plex Mono",monospace}
+.leaderboard .lname{flex:1;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.leaderboard .lscore{font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono",monospace;font-weight:700}
+.leaderboard .lb-empty,.leaderboard .lb-err{color:var(--muted);font-size:12.5px;margin:0}
+</style>
